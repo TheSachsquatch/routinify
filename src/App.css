@@ -139,10 +139,17 @@
     height: 100%;
   }
 
-  .big_text{
-      font-size: 10rem;
-  }
+.big_text{
+    font-size: 9vw;
+}
 
+.title_text{
+    font-size: 6vw;
+}
+
+.width_img{
+    width: 8vw;
+}
 .btn_black{
     @apply bg-black text-white font-bold py-1 px-2 rounded;
 }

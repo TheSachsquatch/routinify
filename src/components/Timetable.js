@@ -43,7 +43,7 @@ function Timetable({routine, user, inputs, setInputs, deleteRtn, date, setDate, 
 
     function detectMobTest() {
         console.log(mob);
-        return ( ( window.innerWidth <= 1545 ));
+        return ( ( window.innerWidth/window.innerHeight <= 0.5625));
     }
     const canGoPrevWeek = week>1;
     useEffect( () => {
@@ -188,8 +188,8 @@ function Timetable({routine, user, inputs, setInputs, deleteRtn, date, setDate, 
             }
         }
         return(
-            edit ? <button className= "text-xl mb-2 btn justify-start col-start-1" onClick = {onClick}>  <div className = "grid justify-items-center">
-                <RiEditFill size = {20} /> </div> </button> :
+            edit ? <button className= "text-xl mb-2 btn justify-self-start !px-5" onClick = {onClick}>
+                <RiEditFill size = {28} /> </button> :
                 <div>
                     <button className= "text-xl mb-2 btn-red justify-start" onClick = {stopEdit}> <RiCloseFill size = {28}/> </button>
                     <button className= "text-xl ml-2 mb-2 btn-green justify-start" onClick = {saveEdit}>
@@ -247,13 +247,13 @@ function Timetable({routine, user, inputs, setInputs, deleteRtn, date, setDate, 
                         </input>
                     </form>
                 </div>
-                <div className = "grid grid-cols-12 flex">
+                <div className = "grid grid-flow-col">
                     <Edit/>
                     {
                     isLog?
-                            <button className = "btn-red ml-2 text-xl mb-2 col-start-12 text-center justify-items-center grid" onClick = {deleteRtn}>
+                            <button className = "btn-red ml-2 text-xl mb-2 justify-self-end text-center justify-items-center grid !py-1 !px-5" onClick = {deleteRtn}>
                                 {
-                                   <RiCloseFill size = {30}/>
+                                   <RiCloseFill size = {28}/>
                                 }
                             </button>
                         : null

@@ -221,13 +221,13 @@ const App = () =>{
             <div className= {wrapper}>
             <div className = "grid">
               <div className = "grid grid-flow-col auto-cols-max">
-                <div className="text-left mt-3 ml-3 text-8xl font-bold justify-self-start mr-5">Routinify  </div>
-                <img src = {Logo} alt = "Logo" className = "w-28"/>
+                <div className="text-left mt-1 ml-3 title_text font-bold justify-self-start mr-3 align-baseline">Routinify  </div>
+                <img src = {Logo} alt = "Logo" className = "mt-1 width_img align-baseline"/>
               </div>
               
               {
                 isLog ?<div className = "justify-self-end">
-                  <div>
+                  <div className = "grid">
                       {!add ? <button className = "btn justify-self-end mr-5" onClick = {addRtn}>
                           <RiArrowDownSLine size = {20}/>
                       </button> :  <button className = "btn justify-self-end mr-5 !" onClick = {stopAdd}>

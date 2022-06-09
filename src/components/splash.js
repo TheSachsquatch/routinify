@@ -2,7 +2,6 @@ import React from 'react'
 import devices from "./devices-01.jpg"
 import routine from "./average_routine.JPG"
 export default function Splash() {
-
   return (
       <body className = "bg-black shadow font-Helvetica-Neue">
            <div className = "grid">
