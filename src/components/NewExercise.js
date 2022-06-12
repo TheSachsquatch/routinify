@@ -46,11 +46,9 @@ function NewExercise({props, setShowNew, exercises_data, updateExercises, day, w
                     break;
                 }
             }
-            console.log(item);
             items.splice(index, 1, formData);
             exercises_data[week][day] = items;
             const newEx = {...exercises_data}
-            console.log(newEx);
             updateExercises(newEx);
         }
 
@@ -60,8 +58,6 @@ function NewExercise({props, setShowNew, exercises_data, updateExercises, day, w
                 update();
             }
             else{
-                console.log(week);
-                console.log(exercises_data)
                 var items = new Array(formData);
                 if(exercises_data[week][day]!=null){
                     items = Array.from(exercises_data[week][day]);

@@ -19,7 +19,6 @@ export default function Login({open, setShow, close, regStatus, reg, loginStatus
         setErrorCap(false);
     }
     const getRout = useCallback((username) =>{
-        console.log(username);
         Axios.get(URL + '/record/routines',{
             params: {
                 user: username
@@ -101,7 +100,6 @@ export default function Login({open, setShow, close, regStatus, reg, loginStatus
 
     const handleCredentialResponse= async googleUser =>{
         const tkn = googleUser.credential;
-        console.log(tkn);
         Axios.get(URL + '/users/google', {
             params: {
                 token: tkn

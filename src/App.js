@@ -56,12 +56,10 @@ const App = () =>{
   const[isLogging, setisLogging] = useState(true);
   var today = moment().format('M/D')
   const[date, setDate] = useState(today);
-  console.log(today);
   const isUser= loginStatus === "" ? "login" : loginStatus;
   const isLog = loginStatus !=="";
   const CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
   const URL = process.env.REACT_APP_SERVER_URL;
-  console.log(CLIENT_ID)
   const startRegister=()=>{
     setisLogging(false);
   }
