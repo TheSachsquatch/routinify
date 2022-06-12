@@ -83,17 +83,17 @@ function NewExercise({props, setShowNew, exercises_data, updateExercises, day, w
                                 <RiAddLine size = {20} />
                             </button>
                         </div>
-                        <div className = "text-center">
-                            <input type = "text" id= "exercise" name= "exercise" placeholder = "exercise"  className = "text-center text-xl self-center w-32 bg-zinc-100 mb-1 rounded" onChange = {handleChange}
+                        <div className = "text-center pt-1 pb-1">
+                            <input type = "text" id= "exercise" name= "exercise" placeholder = "exercise"  className = "text-center text-xl self-center w-40 bg-zinc-100 mb-1 rounded" onChange = {handleChange}
                             value = {formData.exercise}></input>
                         </div>
-                        <div className = "text-center">
+                        <div className = "text-center pb-1">
                             <input type = "text" id= "weight" name= "weight" placeholder = "wgt." className = "text-center w-10 bg-zinc-100 mb-1 rounded" onChange = {handleChange}
                             value = {formData.weight} ></input> lbs&nbsp;
                             <input type = "text" id= "inc" name= "inc" placeholder = "inc" className = "ml-1 font-bold text-center w-10 bg-zinc-100 mb-1 rounded" onChange = {handleChange} 
                             value = {formData.inc}></input> <span className = "font-bold">+&nbsp; </span>
                         </div>
-                        <div className = "text-center font-bold mt-1 mb-1">
+                        <div className = "text-center font-bold mb-2">
                             <input type = "text" id= "sets" name= "sets" placeholder = "sets" className = " text-center w-10 bg-zinc-100 mr-1 font-bold rounded" onChange = {handleChange}
                             value = {formData.sets}></input>
                             X
