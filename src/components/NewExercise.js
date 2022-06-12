@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {RiAddLine, RiCloseLine} from "react-icons/ri"
 
 var initialFormData = Object.freeze({
@@ -9,14 +9,23 @@ var initialFormData = Object.freeze({
     inc: ""
 })
 function NewExercise({props, setShowNew, exercises_data, updateExercises, day, week, item}){
-        if(item!=null){
-            initialFormData = item;
-        }
         const [formData, updateFormData] = React.useState(initialFormData);
+
+        useEffect(()=>{
+            if(item!=null){
+                updateFormData(item)
+            } 
+        }, [updateFormData, item])
+
         const handleChange = (e) =>{
             updateFormData({...formData,
             [e.target.name]: e.target.value
             })
+        }
+        
+        const reset = () =>{
+            updateFormData(initialFormData);
+            props= setShowNew(false)
         }
 
         function update(){
@@ -67,7 +76,7 @@ function NewExercise({props, setShowNew, exercises_data, updateExercises, day, w
                 <div className = "newEx grid justify-items-stretch shadow-sm shadow-zinc-300 rounded-md bg-zinc-200 mt-2">
                     <form>
                         <div className = "justify-items-left">
-                            <button className = "btn-red !px-1" type = "reset" onClick = {props= () => setShowNew(false)}>
+                            <button className = "btn-red !px-1" type = "reset" onClick = {reset}>
                                 <RiCloseLine size = {20}/>
                             </button>
                             <button className = "btn-green !px-1" onClick = {handleSubmit}>
@@ -75,20 +84,20 @@ function NewExercise({props, setShowNew, exercises_data, updateExercises, day, w
                             </button>
                         </div>
                         <div className = "text-center">
-                            <input type = "text" id= "exercise" name= "exercise" placeholder = "Exercise"  className = "text-center text-xl self-center w-32 bg-zinc-100 mb-1 rounded" onChange = {handleChange}
+                            <input type = "text" id= "exercise" name= "exercise" placeholder = "exercise"  className = "text-center text-xl self-center w-32 bg-zinc-100 mb-1 rounded" onChange = {handleChange}
                             value = {formData.exercise}></input>
                         </div>
                         <div className = "text-center">
-                            <input type = "text" id= "weight" name= "weight" placeholder = "Wgt." className = "text-center w-10 bg-zinc-100 mb-1 rounded" onChange = {handleChange}
+                            <input type = "text" id= "weight" name= "weight" placeholder = "wgt." className = "text-center w-10 bg-zinc-100 mb-1 rounded" onChange = {handleChange}
                             value = {formData.weight} ></input> lbs&nbsp;
-                            <input type = "text" id= "inc" name= "inc" placeholder = "Inc" className = "ml-1 font-bold text-center w-10 bg-zinc-100 mb-1 rounded" onChange = {handleChange} 
+                            <input type = "text" id= "inc" name= "inc" placeholder = "inc" className = "ml-1 font-bold text-center w-10 bg-zinc-100 mb-1 rounded" onChange = {handleChange} 
                             value = {formData.inc}></input> <span className = "font-bold">+&nbsp; </span>
                         </div>
                         <div className = "text-center font-bold mt-1 mb-1">
-                            <input type = "text" id= "sets" name= "sets" placeholder = "Sets" className = " text-center w-10 bg-zinc-100 mr-1 font-bold rounded" onChange = {handleChange}
+                            <input type = "text" id= "sets" name= "sets" placeholder = "sets" className = " text-center w-10 bg-zinc-100 mr-1 font-bold rounded" onChange = {handleChange}
                             value = {formData.sets}></input>
                             X
-                            <input type = "text" id= "reps" name= "reps" placeholder="Reps" className = "text-center w-10 bg-zinc-100 ml-1 font-bold rounded" onChange = {handleChange}
+                            <input type = "text" id= "reps" name= "reps" placeholder="reps" className = "text-center w-10 bg-zinc-100 ml-1 font-bold rounded" onChange = {handleChange}
                             value = {formData.reps}></input>
                         </div>
                     </form>
