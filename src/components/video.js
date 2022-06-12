@@ -15,7 +15,7 @@ function Video({showVideo, setShowVideo, URL}) {
     }
     const apiLoad = url==="";
     function getVideo(){
-        Axios.get(URL + "/video", {
+        Axios.get(URL + "/videos/video", {
             params: {
                 exercise: showVideo
             }
@@ -25,7 +25,7 @@ function Video({showVideo, setShowVideo, URL}) {
                 setUrl(response.data.video);
             }
             else{
-                Axios.post(URL + "/videoscrape", {
+                Axios.post(URL + "/videos/videoscrape", {
                     exercise: showVideo
                 }).then((resp)=>{
                     console.log(resp);
