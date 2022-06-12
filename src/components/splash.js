@@ -1,6 +1,8 @@
 import React from 'react'
 import devices from "./devices-01.jpg"
 import routine from "./average_routine.JPG"
+import {RiGithubFill} from "react-icons/ri"
+
 export default function Splash() {
   return (
       <body className = "bg-black shadow font-Helvetica-Neue">
@@ -30,8 +32,14 @@ export default function Splash() {
             <div className = "h-40">
 
             </div>
-            <div className = "bg-white grid pl-5 text-xl py-10 footer">
-                A Sachin Vijayaraj website
+            <div className = "bg-white grid grid-flow-col auto-cols-max pl-5 text-xl py-5">
+                <div>
+                    created by sachin vijayaraj&nbsp;
+                </div>
+                <a href ="https://github.com/TheSachsquatch" target = "_blank" rel = "noreferrer">
+                    <RiGithubFill size= {30} className = "hover:text-gray-500"/>
+                </a>
+                 
             </div>
       </body>
         
