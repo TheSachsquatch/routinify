@@ -88,10 +88,6 @@ function Timetable({routine, user, inputs, setInputs, deleteRtn, date, setDate, 
         const newWeek = week+1;
         console.log(newWeek);
         console.log(inputs);
-        if(isLog){
-            inputs = Object.values(inputs);
-        }
-        console.log(inputs);
         console.log(inputs.length-1);
         if(newWeek> inputs.length-1 ){
             let exercises_data= [...inputs]
