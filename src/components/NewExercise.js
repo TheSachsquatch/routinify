@@ -48,7 +48,7 @@ function NewExercise({props, setShowNew, exercises_data, updateExercises, day, w
             }
             items.splice(index, 1, formData);
             exercises_data[week][day] = items;
-            const newEx = {...exercises_data}
+            const newEx = [...exercises_data]
             updateExercises(newEx);
         }
 
@@ -64,7 +64,7 @@ function NewExercise({props, setShowNew, exercises_data, updateExercises, day, w
                     items.push(formData);
                 }
                 exercises_data[week][day] = items;
-                const newEx = {...exercises_data}
+                const newEx = [...exercises_data]
                 updateExercises(newEx);
             }
         }
